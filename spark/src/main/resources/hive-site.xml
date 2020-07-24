@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+    #指定存放在mysql上的元数据库的名称,如果没有创建直接创建
+    <property>
+        <name>javax.jdo.option.ConnectionURL</name>
+        <value>jdbc:mysql://master1:3306/hive?createDatabaseIfNotExist=true</value>
+        <description>JDBC connect string for a JDBC metastore</description>
+    </property>
+    #指定登录的用户ID
+    <property>
+        <name>javax.jdo.option.ConnectionUserName</name>
+        <value>root</value>
+        <description>username to use against metastore database</description>
+    </property>
+    #指定登录程序的主类名
+    <property>
+        <name>javax.jdo.option.ConnectionDriverName</name>
+        <value>com.mysql.cj.jdbc.Driver</value>
+    </property>
+    #指定登录的用户密码
+    <property>
+        <name>javax.jdo.option.ConnectionPassword</name>
+        <value>123456</value>
+        <description>password to use against metastore database</description>
+    </property>
+    #指定default库的原始位置
+    <property>
+        <name>hive.metastore.warehouse.dir</name>
+        <value>hdfs://master1:8020/user/hive/warehouse</value>
+        <description>location of default database for the warehouse</description>
+    </property>
+    #查询信息显示表头信息
+    <property>
+        <name>hive.cli.print.header</name>
+        <value>true</value>
+    </property>
+    #查询信息显示当前数据库
+    <property>
+        <name>hive.cli.print.current.db</name>
+        <value>true</value>
+    </property>
+</configuration>
